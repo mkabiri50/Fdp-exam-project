@@ -4,42 +4,44 @@ class Arcwin extends Component {
     state = {
         scales: {
             w: {
-                value: 600
+                value: 500
             },
-
+           
             t: {
                 value: 10
             },
         },
 
         origin: [window.innerWidth / 2, window.innerHeight / 2]
-
     }
+            myChangeHandler = event => {
 
-    myChangeHandler = event => {
-
-        const name = event.target.name;
-        const value = event.target.value;
-
-        this.setState({
-            scales: {
-                ...this.state.scales,
-                [name]: {
-                    ...this.state.scales[name],
-                    value
+           const name = event.target.name;
+            const value = event.target.value;
+    
+            this.setState({
+                scales: {
+                    ...this.state.scales,
+                    [name]: {
+                        ...this.state.scales[name],
+                        value
+                    }
                 }
-            }
-        });
+            });
+    
+        }
 
-    }
+   
     handleClick = (id) => {
         alert('element :' + id)
     };
     render() {
+        console.log(this.state)
         const w = this.state.scales.w.value;
         const t = this.state.scales.t.value;
         return (
             <React.Fragment>
+     
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <form style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                         <h1>PFD</h1>
