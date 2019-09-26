@@ -42,7 +42,7 @@ class Rec extends Component {
                             points={[-w / 2, -h / 2, w / 2, -h / 2, w / 2 - t, -h / 2 + t, -w / 2 + t, -h / 2 + t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
                             lineJoin='miter'
                             onClick={() => this.handleClick(1)}
                             fill='#eee'
@@ -54,7 +54,7 @@ class Rec extends Component {
                             points={[w / 2, -h / 2, w / 2, h / 2, w / 2 - t, h / 2 - t, w / 2 - t, -h / 2 + t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(2)}
@@ -66,7 +66,7 @@ class Rec extends Component {
                             points={[(w / 2), (h / 2), (-w / 2), (h / 2), (-w / 2) + t, (h / 2) - t, (w / 2) - t, (h / 2) - t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(3)}
@@ -78,7 +78,7 @@ class Rec extends Component {
                             points={[(-w / 2), h / 2, (-w / 2), (-h / 2), (-w / 2) + t, (-h / 2) + t, (-w / 2) + t, (h / 2) - t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(4)}
@@ -102,10 +102,10 @@ class Rec extends Component {
                             points={[(-w / 2) + t, (-h / 2) + t, (w / 2) - t, (-h / 2) + t, (w / 2) - t * 1.3, (-h / 2) + t * 1.3, (-w / 2) + t * 1.3, (-h / 2) + t * 1.3]}
                             closed
                             stroke='black'
-                            strokeWidth={1}
+                            strokeWidth={.5}
                             lineJoin='miter'
                             onClick={() => this.handleClick(1)}
-                            fill='#bbb'
+                            fill='#eee'
                         />
                         <Line
                             x={this.state.origin[0]}
@@ -113,11 +113,11 @@ class Rec extends Component {
                             points={[w / 2 - t, -h / 2 + t, w / 2 - t, h / 2 - t, w / 2 - t * 1.3, h / 2 - t * 1.3, w / 2 - t * 1.3, -h / 2 + t*1.3]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(2)}
-                            fill='#bbb'
+                            fill='#eee'
                         />
 
                         <Line
@@ -126,11 +126,11 @@ class Rec extends Component {
                             points={[(w / 2)-t, (h / 2)-t, (-w / 2)+t, (h / 2)-t, (-w / 2) + t*1.3, (h / 2) - t*1.3, (w / 2) - t*1.3, (h / 2) - t*1.3]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(3)}
-                            fill='#bbb'
+                            fill='#eee'
                         />
                    <Line
                             x={this.state.origin[0]}
@@ -138,7 +138,7 @@ class Rec extends Component {
                             points={[(-w / 2)+t, h / 2-t, (-w / 2)+t, (-h / 2)+t, (-w / 2) + t*1.3, (-h / 2) + t*1.3, (-w / 2) + t*1.3, (h / 2) - t*1.3]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
                             lineJoin='miter'
 
                             onClick={() => this.handleClick(4)}
@@ -151,14 +151,14 @@ class Rec extends Component {
 
                             points={[-10, 0, 10, 0]}
                             stroke='#2A8AE1'
-                            strokeWidth={2}
+                            strokeWidth={1}
                         />
                         <Line
                             x={this.state.origin[0]}
                             y={this.state.origin[1]}
                             points={[0, - 10, 0, 10]}
                             stroke='#2A8AE1'
-                            strokeWidth={2}
+                            strokeWidth={1}
                         />
                     </Layer>
                 </Stage>

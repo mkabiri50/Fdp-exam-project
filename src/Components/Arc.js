@@ -45,7 +45,7 @@ class Arcwin extends Component {
                             outerRadius={w}
                             angle={-90}
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
                             offset
                             clockwise
                             fill='#eee'
@@ -58,7 +58,7 @@ class Arcwin extends Component {
                             outerRadius={w-t}
                             angle={-90}
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
                             offset
                             clockwise
                             fill='#eee'
@@ -70,7 +70,7 @@ class Arcwin extends Component {
                             points={[w / 2, w / 2, -w / 2, w / 2, -w / 2 + t, w / 2 - t, w / 2 - t, w / 2 - t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
 
                             fill='#eee'
                             onClick={() => this.handleClick(2)}
@@ -81,7 +81,7 @@ class Arcwin extends Component {
                             points={[-w/2,-w/2, -w/2+t,-w/2+t, -w/2+t,w/2-t, -w/2,w/2]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={1}
 
                             fill='#eee'
                             onClick={() => this.handleClick(3)}
@@ -96,7 +96,7 @@ class Arcwin extends Component {
                             points={[w / 2-t, w / 2-t, -w / 2+t, w / 2-t, -w / 2 + t*1.3, w / 2 - t*1.3, w / 2 - t*1.3, w / 2 - t*1.3]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
 
                             fill='#eee'
                             onClick={() => this.handleClick(2)}
@@ -107,7 +107,7 @@ class Arcwin extends Component {
                             points={[-w/2+t,-w/2+t, -w/2+t*1.3,-w/2+t*1.3, -w/2+t*1.3,w/2-t*1.3, -w/2+t,w/2-t]}
                             closed
                             stroke='black'
-                            strokeWidth={2}
+                            strokeWidth={.5}
 
                             fill='#eee'
                             onClick={() => this.handleClick(3)}
@@ -119,14 +119,14 @@ class Arcwin extends Component {
 
                             points={[-10, 0, 10, 0]}
                             stroke='#2A8AE1'
-                            strokeWidth={2}
+                            strokeWidth={1}
                         />
                         <Line
                             x={this.state.origin[0]}
                             y={this.state.origin[1]}
                             points={[0, - 10, 0, 10]}
                             stroke='#2A8AE1'
-                            strokeWidth={2}
+                            strokeWidth={1}
                         />
               </Layer>
                 </Stage>
