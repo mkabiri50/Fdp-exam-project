@@ -17,22 +17,7 @@ class Rec extends Component {
         origin: [window.innerWidth / 2, window.innerHeight / 2]
 
     }
-    myChangeHandler = event => {
-
-        const name = event.target.name;
-        const value = event.target.value;
-
-        this.setState({
-            scales: {
-                ...this.state.scales,
-                [name]: {
-                    ...this.state.scales[name],
-                    value
-                }
-            }
-        });
-
-    }
+   
     handleClick = (id) => {
         alert('element :' + id)
     };
@@ -42,33 +27,8 @@ class Rec extends Component {
         const h = this.state.scales.h.value
         const t = this.state.scales.t.value
         return (
-            <React.Fragment>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <form style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                        <h1>PFD</h1>
-                        <p style={{ margin: 20 }}>width:</p>
-                        <input
-                            type='text'
-                            name='w'
-                            value={this.state.scales.w.value}
-                            onChange={this.myChangeHandler}
-                        />
-                        <p style={{ margin: 20 }}>height</p>
-                        <input
-                            type='text'
-                            name='h'
-                            value={this.state.scales.h.value}
-                            onChange={this.myChangeHandler}
-                        />
-                        <p style={{ margin: 20 }}>tickness</p>
-                        {/* <input
-                            type='text'
-                            name='t'
-                            value={this.state.scales.t.value}
-                            onChange={this.myChangeHandler}
-                        /> */}
-                    </form>
-                </div>
+         
+         
 
 
                 <Stage width={window.innerWidth} height={window.innerHeight}>
@@ -202,7 +162,7 @@ class Rec extends Component {
                         />
                     </Layer>
                 </Stage>
-            </React.Fragment>
+           
         );
     }
 }

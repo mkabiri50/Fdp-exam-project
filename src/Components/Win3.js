@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Stage, Layer, Line, Arc, Wedge } from 'react-konva'
+import { Stage, Layer, Line, Arc, Wedge, Shape } from 'react-konva'
 class Win3 extends Component {
     state = {
         scales: {
@@ -14,22 +14,7 @@ class Win3 extends Component {
         origin: [window.innerWidth / 2, window.innerHeight / 2]
 
     }
-    myChangeHandler = event => {
-
-        const name = event.target.name;
-        const value = event.target.value;
-
-        this.setState({
-            scales: {
-                ...this.state.scales,
-                [name]: {
-                    ...this.state.scales[name],
-                    value
-                }
-            }
-        });
-
-    }
+   
     handleClick = (id) => {
         alert('element :' + id)
     };
@@ -40,44 +25,38 @@ class Win3 extends Component {
         const h = (w * Math.sqrt(3) / 2 - w / 2) * 2
         const origin = [window.innerWidth / 2, window.innerHeight / 2]
         return (
-            <React.Fragment>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <form style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                        <h1>PFD</h1>
-                        <p style={{ margin: 20 }}>width:</p>
-                        <input
-                            type='text'
-                            name='w'
-                            value={this.state.scales.w.value}
-                            onChange={this.myChangeHandler}
-                        />
-                    </form>
-                </div>
+            
                 <Stage width={window.innerWidth} height={window.innerHeight}>
                     <Layer>
-                        <Wedge
-                              x={origin[0]}
-                              y={origin[1] + w / 2}
-                            radius={w - 2 * t}
-                            angle={60}
-                            fill='#8FD4F1'
-                            stroke='black'
+                        <Shape
+                            sceneFunc={(context, shape) => {
+                                context.beginPath();
+                                context.moveTo(origin[0]+(-w / 2) , origin[1]+(-h / 2) );
+                                context.lineTo(origin[0]+(-w / 2) + t, origin[1]+(-h / 2) +t / Math.sqrt(3) );
+                                context.quadraticCurveTo(origin[0],origin[1]-w/2+t, origin[0]+w / 2-t, origin[1]-h/ 2+t / Math.sqrt(3));
+                                context.lineTo(origin[0]+w / 2 , origin[1]+(-h / 2)  );
+                                context.quadraticCurveTo(origin[0],origin[1]-w/2, origin[0]+(-w / 2) , origin[1]+(-h / 2));
+                                context.closePath();
+                                context.fillStrokeShape(shape);
+                            }}
+                            fill="#eee"
+                            stroke="black"
                             strokeWidth={1}
-                            rotation={-120} />
-                        <Arc
-                            x={origin[0]}
-                            y={origin[1] + w / 2}
-                            innerRadius={w - t}
-                            outerRadius={w}
-                            angle={-60}
-                            stroke='black'
-                            strokeWidth={2}
-                            offset
-                            clockwise
-                            fill='#eee'
                             onClick={() => this.handleClick(1)}
-                            rotation={-60}
-                            lineCap='bevel'
+                        />
+                           <Shape
+                            sceneFunc={(context, shape) => {
+                                context.beginPath();
+                                context.moveTo(origin[0]+(-w / 2) + t, origin[1]+(-h / 2) +t / Math.sqrt(3) );
+                                context.lineTo(origin[0]+(-w / 2) + t, origin[1]+(+h / 2) -t  );
+                                context.lineTo(origin[0]+(+w / 2) - t, origin[1]+(+h / 2) -t  );
+                                context.lineTo(origin[0]+w / 2-t , origin[1]+(-h / 2) +t / Math.sqrt(3) );
+                                context.quadraticCurveTo(origin[0],origin[1]-w/2+t, origin[0]-w / 2+t, origin[1]-h/ 2+t / Math.sqrt(3));
+                                context.fillStrokeShape(shape);
+                            }}
+                            fill="#8FD4F1"
+                            stroke="black"
+                            strokeWidth={1}
                         />
                         <Line
                             x={origin[0]}
@@ -118,7 +97,7 @@ class Win3 extends Component {
 
                     </Layer>
                 </Stage>
-            </React.Fragment>
+         
 
         );
     }

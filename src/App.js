@@ -7,13 +7,16 @@ import Win3 from './Components/Win3';
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment >
+      
         <ToolBar />
         <Switch>
           <Route path="/" exact component={Rec} />
           <Route path="/UNIT-2" component={Arc} />
           <Route path="/UNIT-3" component={Win3} />
         </Switch>
+      
+        
       </React.Fragment>
 
     )
